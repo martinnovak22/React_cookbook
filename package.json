@@ -2,7 +2,7 @@
   "name": "tip-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "/tip-app",
+  "homepage": "https://martinnovak22.github.io/tip-app/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
