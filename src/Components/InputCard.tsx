@@ -26,6 +26,7 @@ function InputCard(props: any) {
 
   const inputRef1 = React.useRef<HTMLInputElement>(null);
   const inputRef2 = React.useRef<HTMLInputElement>(null);
+
   function handleSelection(ref: React.RefObject<HTMLInputElement>): void {
     if (ref.current) {
       ref.current.select();
