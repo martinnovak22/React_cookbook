@@ -4,9 +4,12 @@ import "/src/App.css";
 export default function ResultCard(props: any) {
   const tip: number = props.tip;
   const state: { bill: number; people: number } = props.state;
+  const setState = props.setState;
+  const setTip = props.setTip;
 
-  // TODO upgrade Error
   let isError: boolean = false;
+
+  // calculation handling
   let totalPerson: number = 0;
   let tipPerson: number = 0;
   if (state.people === 0) {
@@ -16,25 +19,46 @@ export default function ResultCard(props: any) {
     totalPerson = (state.bill + (state.bill / 100) * tip) / state.people;
   }
 
-  console.log(totalPerson);
+  // complete reset
+  function handleReset() {
+    setState({ bill: 0, people: 1 });
+    setTip(0);
+  }
+
   return (
     <div className={"result-card"}>
-      <div>
-        <p>Tip amount</p>
-        <output>{isNaN(tipPerson) ? 0 : tipPerson}</output>
+      <div className={"tip-person"}>
+        <div className={"result-text"}>
+          <h4>Tip amount</h4>
+          <p>/ person</p>
+        </div>
+        <output>{isNaN(tipPerson) ? 0 : "$" + tipPerson.toFixed(2)}</output>
       </div>
-      <div>
-        <p>Total</p>
-        <output>{isNaN(totalPerson) ? 0 : totalPerson}</output>
+      <div className={"total-person"}>
+        <div className={"result-text"}>
+          <h4>Total</h4>
+          <p>/ person</p>
+        </div>
+        <output>{isNaN(totalPerson) ? 0 : "$" + totalPerson.toFixed(2)}</output>
       </div>
       <div>
         {isError ? (
-          <p style={{ color: "red" }}>Error, nulou dělit nelze!</p>
+          <p style={{ color: "red", marginLeft: "15px" }}>
+            Error, nulou dělit nelze!
+          </p>
         ) : null}
         {isNaN(tip) ? (
-          <p style={{ color: "red" }}>Error, zadejte číselnou hodnotu!</p>
+          <p style={{ color: "red", marginLeft: "10px" }}>
+            Error, zadejte číselnou hodnotu!
+          </p>
         ) : null}
       </div>
+      <input
+        type="reset"
+        value={"RESET"}
+        onClick={handleReset}
+        className={"reset-button"}
+      />
     </div>
   );
 }

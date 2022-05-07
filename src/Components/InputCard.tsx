@@ -2,31 +2,23 @@ import React, { useEffect } from "react";
 import RadioButton from "./RadioButton";
 import "/src/App.css";
 function InputCard(props: any) {
-  // const [tip, setTip] = React.useState(0);
-  // const [state, setState] = React.useState({
-  //   bill: 0,
-  //   people: 0,
-  // });
-
   const tip = props.tip;
   const state: { bill: number; people: number } = props.state;
   const setState = props.setState;
   const setTip = props.setTip;
 
-  useEffect(() => {
-    console.log(state.bill);
-    console.log(state.people);
-    console.log(tip);
-  }, [state.bill, tip, state.people]);
-
+  // setting state of inputs
   function handleChange(e: React.FormEvent<HTMLInputElement>) {
     const value = Number(e.currentTarget.value);
     setState({ ...state, [e.currentTarget.name]: value });
   }
 
+  // refs for input selection
   const inputRef1 = React.useRef<HTMLInputElement>(null);
   const inputRef2 = React.useRef<HTMLInputElement>(null);
+  const inputRef3 = React.useRef<HTMLInputElement>(null);
 
+  //input selection
   function handleSelection(ref: React.RefObject<HTMLInputElement>): void {
     if (ref.current) {
       ref.current.select();
@@ -36,7 +28,9 @@ function InputCard(props: any) {
   return (
     <div className={"input-card"}>
       <div>
-        <p>Bill</p>
+        <label htmlFor={"bill-input"} className={"input-label"}>
+          Bill
+        </label>
         <input
           type="number"
           name="bill"
@@ -45,10 +39,12 @@ function InputCard(props: any) {
           onClick={() => handleSelection(inputRef1)}
           ref={inputRef1}
           min={0}
+          className={"input-num"}
+          id={"bill-input"}
         />
       </div>
       <div>
-        <p>Select tip %</p>
+        <label className={"input-label"}>Select tip %</label>
         <div className={"tip-table"}>
           <RadioButton value={5} onTipChange={setTip} isChecked={tip === 5} />
           <RadioButton value={10} onTipChange={setTip} isChecked={tip === 10} />
@@ -59,21 +55,27 @@ function InputCard(props: any) {
             className={"tip-input"}
             type={"text"}
             name={"tip"}
-            placeholder={"Custom"}
+            value={tip ? tip : "Custom"}
+            ref={inputRef2}
+            onClick={() => handleSelection(inputRef2)}
             onChange={(e) => setTip(Number(e.currentTarget.value))}
           />
         </div>
       </div>
       <div>
-        <p>Number of people</p>
+        <label htmlFor={"people-input"} className={"input-label"}>
+          Number of people
+        </label>
         <input
           type="number"
           name="people"
           value={state.people}
           onChange={handleChange}
-          onClick={() => handleSelection(inputRef2)}
-          ref={inputRef2}
+          onClick={() => handleSelection(inputRef3)}
+          ref={inputRef3}
           min={1}
+          className={"input-num"}
+          id={"people-input"}
         />
       </div>
     </div>

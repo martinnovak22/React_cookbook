@@ -1,5 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Space Mono", sans-serif;
+}
+
+img {
+  max-width: 100px;
+  margin: 70px;
+}
+
 /*main part of app*/
-.container {
+.app-container {
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -16,6 +33,7 @@
   min-height: 300px;
 }
 
+/*table of radio buttons and custom input*/
 .tip-table {
   display: grid;
   justify-self: center;
@@ -24,6 +42,19 @@
   gap: 20px;
 }
 
+/*input for custom tip %*/
+.tip-input {
+  border-radius: 5px;
+  min-height: 30px;
+  border: none;
+  background-color: hsl(185, 41%, 84%);
+  justify-self: center;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
+
+/*custom radio buttons*/
 .radio-button {
   display: flex;
   justify-content: center;
@@ -37,7 +68,6 @@
   min-height: 30px;
 }
 
-/*custom radio button*/
 input[type="radio"] {
   display: none;
 }
@@ -47,17 +77,44 @@ input[type="radio"]:checked + span {
   color: hsl(183, 100%, 15%);
 }
 
-/*input for custom tip %*/
-.tip-input {
+.radio-button:hover {
+  cursor: pointer;
+}
+
+/*basic input*/
+.input-num {
   border-radius: 5px;
   min-height: 30px;
-  border: none;
-  font-family: "Space Mono", sans-serif;
-  background-color: hsl(185, 41%, 84%);
-  justify-self: center;
+  text-align: right;
+  border: 1px solid transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  padding: 5px 15px 5px 0;
   width: 100%;
-  text-align: center;
-  font-size: 15px;
+}
+
+/*hiding up/down buttons*/
+.input-num::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/*small icons in inputs*/
+#bill-input {
+  background: hsl(185, 41%, 84%) url("images/icon-dollar.svg") 3% no-repeat;
+}
+
+#people-input {
+  background: hsl(185, 41%, 84%) url("images/icon-person.svg") 3% no-repeat;
+}
+
+/*labels for those basic inputs*/
+.input-label {
+  display: inline-block;
+  padding: 20px 0 10px;
+}
+
+.input-label:hover {
+  cursor: pointer;
 }
 
 /*right part with results*/
@@ -67,4 +124,62 @@ input[type="radio"]:checked + span {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
+}
+
+/*boxes for each result*/
+.tip-person,
+.total-person {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.result-text {
+  color: white;
+}
+
+.result-text h4,
+p {
+  margin: 0;
+}
+
+output {
+  margin-right: 20px;
+  color: hsl(172, 67%, 45%);
+  font-weight: 700;
+  font-size: 25px;
+}
+
+/*reset button*/
+.reset-button {
+  background-color: hsl(172, 67%, 45%);
+  border-radius: 5px;
+  border: none;
+  width: 80%;
+  height: 40px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.reset-button:hover {
+  cursor: pointer;
+}
+
+/*basis responsiveness*/
+@media only screen and (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .result-card {
+    margin-top: 20px;
+    padding: 0 0 30px;
+    width: 100%;
+  }
+
+  .input-card {
+    width: 98%;
+  }
 }
