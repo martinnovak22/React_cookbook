@@ -22,6 +22,7 @@ img {
   background-color: white;
   border-radius: 15px;
   max-width: 800px;
+  min-height: 400px;
   padding: 30px;
 }
 
