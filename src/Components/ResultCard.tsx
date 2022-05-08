@@ -46,20 +46,24 @@ export default function ResultCard(props: any) {
         </output>
       </div>
       <div>
-        {isError ? (
-          <p style={{ color: "#F55353", marginLeft: "15px" }}>
-            Nulou dělit nelze!
-          </p>
-        ) : (
-          <p style={{ visibility: "hidden" }}>placeholder</p>
-        )}
-        {isNaN(tip) ? (
-          <p style={{ color: "#F55353", marginLeft: "15px" }}>
-            Zadejte číselnou hodnotu!
-          </p>
-        ) : (
-          <p style={{ visibility: "hidden" }}>placeholder</p>
-        )}
+        <p
+          style={{
+            visibility: isError ? "visible" : "hidden",
+            color: "#F55353",
+            marginLeft: "15px",
+          }}
+        >
+          Nulou dělit nelze!
+        </p>
+        <p
+          style={{
+            visibility: isNaN(tip) ? "visible" : "hidden",
+            color: "#F55353",
+            marginLeft: "15px",
+          }}
+        >
+          Zadejte číselnou hodnotu!
+        </p>
       </div>
       <input
         type="reset"
