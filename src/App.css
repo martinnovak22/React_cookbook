@@ -181,6 +181,10 @@ output {
   }
 
   .input-card {
-    width: 98%;
+    width: 100%;
+  }
+
+  .tip-table {
+    grid-template-columns: 1fr 1fr;
   }
 }

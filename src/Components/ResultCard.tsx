@@ -30,7 +30,7 @@ export default function ResultCard(props: any) {
       <div className={"tip-person"}>
         <div className={"result-text"}>
           <h4>Tip amount</h4>
-          <p>/ person</p>
+          <p style={{ color: "hsl(186, 14%, 56%)" }}>/ person</p>
         </div>
         <output>
           {isNaN(tipPerson) ? "$0.00" : "$" + tipPerson.toFixed(2)}
@@ -39,7 +39,7 @@ export default function ResultCard(props: any) {
       <div className={"total-person"}>
         <div className={"result-text"}>
           <h4>Total</h4>
-          <p>/ person</p>
+          <p style={{ color: "hsl(186, 14%, 56%)" }}>/ person</p>
         </div>
         <output>
           {isNaN(totalPerson) ? "$0.00" : "$" + totalPerson.toFixed(2)}
