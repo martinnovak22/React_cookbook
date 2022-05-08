@@ -47,30 +47,18 @@ export default function ResultCard(props: any) {
       </div>
       <div>
         {isError ? (
-          <p
-            style={{
-              color: "red",
-              marginLeft: "15px",
-              display: "inline-block",
-            }}
-          >
-            Error, nulou dělit nelze!
+          <p style={{ color: "#F55353", marginLeft: "15px" }}>
+            Nulou dělit nelze!
           </p>
         ) : (
-          <p style={{ display: "hidden" }}></p>
+          <p style={{ visibility: "hidden" }}>placeholder</p>
         )}
         {isNaN(tip) ? (
-          <p
-            style={{
-              color: "red",
-              marginLeft: "15px",
-              display: "inline-block",
-            }}
-          >
-            Error, zadejte číselnou hodnotu!
+          <p style={{ color: "#F55353", marginLeft: "15px" }}>
+            Zadejte číselnou hodnotu!
           </p>
         ) : (
-          <p style={{ display: "hidden" }}></p>
+          <p style={{ visibility: "hidden" }}>placeholder</p>
         )}
       </div>
       <input
