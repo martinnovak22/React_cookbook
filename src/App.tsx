@@ -1,11 +1,7 @@
-import CalcCard from "./CalcCard";
+import Calculator from "./Calculator";
 
 function App() {
-  return (
-    <>
-      <CalcCard />
-    </>
-  );
+  return <Calculator />;
 }
 
 export default App;

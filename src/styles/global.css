@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: hsl(185, 41%, 84%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Space Mono", sans-serif;
+}
+
+img {
+  max-width: 100px;
+  margin: 70px;
+}
+
+/*main part of app*/
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 800px;
+  min-height: 400px;
+  padding: 30px;
+}
+
+/*basis responsiveness*/
+@media only screen and (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .result-card {
+    margin-top: 20px;
+    padding: 0 0 30px;
+    width: 100%;
+  }
+
+  .input-card {
+    width: 100%;
+  }
+
+  .tip-table {
+    grid-template-columns: 1fr 1fr;
+  }
+}
