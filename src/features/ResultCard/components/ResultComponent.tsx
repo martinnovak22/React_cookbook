@@ -3,12 +3,12 @@ import { resultComponentProps } from "../types/ResultCardTypes";
 
 function ResultComponent(props: resultComponentProps) {
   return (
-    <div className={"result-box"}>
-      <div className={"result-text"}>
+    <div className={"result"}>
+      <div className={"result__text"}>
         <h4>{props.title}</h4>
-        <p style={{ color: "hsl(186, 14%, 56%)" }}>/ person</p>
+        <p className={"result__text-mod"}>/ person</p>
       </div>
-      <output>{props.calculate}</output>
+      <output className={"result__output"}>{props.calculate}</output>
     </div>
   );
 }

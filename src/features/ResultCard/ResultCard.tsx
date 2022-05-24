@@ -1,5 +1,4 @@
 import React from "react";
-import "/src/styles/global.css";
 import formatNumber from "../../utils/numberFormat.js";
 import ResultComponent from "./components/ResultComponent";
 import { DEFAULT_VALUES } from "../../Calculator";
@@ -44,7 +43,7 @@ export default function ResultCard(props: ResultCardTypes) {
   }
 
   return (
-    <div className={"result-card"}>
+    <div className={"results"}>
       <ResultComponent title={RESULTS.TIP_AMOUNT} calculate={calculateTip()} />
       <ResultComponent
         title={RESULTS.TOTAL_AMOUNT}
@@ -65,7 +64,7 @@ export default function ResultCard(props: ResultCardTypes) {
         type="reset"
         value={"RESET"}
         onClick={handleReset}
-        className={"reset-button"}
+        className={"results__reset-button"}
       />
     </div>
   );

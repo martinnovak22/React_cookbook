@@ -18,9 +18,9 @@ export default function Calculator() {
   console.log(values);
 
   return (
-    <div className={"page"}>
-      <img src={logoSvg} alt={"logo"} />
-      <div className={"app-container"}>
+    <div className={"app"}>
+      <img src={logoSvg} alt={"logo"} className={"app__logo"} />
+      <div className={"app__container"}>
         <InputCard values={values} onValueChange={handleValueChange} />
         <ResultCard values={values} setValues={setValues} />
       </div>

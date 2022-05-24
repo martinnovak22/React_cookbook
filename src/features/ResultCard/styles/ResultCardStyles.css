@@ -1,38 +1,14 @@
-/*right part with results*/
-.result-card {
+/*CSS for whole card*/
+.results {
   background-color: hsl(183, 100%, 15%);
-  width: 48%;
+  width: 50%;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
 }
 
-/*boxes for each result*/
-.result-box {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  margin-top: 40px;
-}
-
-.result-text {
-  color: white;
-}
-
-.result-text h4,
-p {
-  margin: 0;
-}
-
-output {
-  margin-right: 20px;
-  color: hsl(172, 67%, 45%);
-  font-weight: 700;
-  font-size: 25px;
-}
-
 /*reset button*/
-.reset-button {
+.results__reset-button {
   background-color: hsl(172, 67%, 45%);
   border-radius: 5px;
   border: none;
@@ -44,6 +20,39 @@ output {
   align-self: center;
 }
 
-.reset-button:hover {
+.results__reset-button:hover {
   cursor: pointer;
+}
+
+/*CSS result components*/
+
+/*boxes for each result*/
+.result {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.result__text {
+  color: white;
+}
+
+.result__text-mod {
+  color: hsl(186, 14%, 56%);
+}
+
+.result__output {
+  margin-right: 20px;
+  color: hsl(172, 67%, 45%);
+  font-weight: 700;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 900px) {
+  .results {
+    margin-top: 20px;
+    padding: 0 0 30px;
+    width: 100%;
+  }
 }
