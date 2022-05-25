@@ -24,7 +24,7 @@ function InputCard(props: InputCardTypes) {
   return (
     <form className={"inputs"}>
       <div className={"inputs__inputBox"}>
-        <label htmlFor={"input__peopleInput"} className={"input__label"}>
+        <label htmlFor={"input__billInput"} className={"input__label"}>
           Bill
         </label>
         <input

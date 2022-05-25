@@ -13,11 +13,9 @@ const RESULTS = {
 
 export default function ResultCard(props: ResultCardTypes) {
   const values = props.values;
-  let isError: boolean = false;
 
   function calculateTip(): string {
     if (values.people == 0) {
-      isError = true;
       return formatNumber(0);
     }
 
@@ -52,12 +50,12 @@ export default function ResultCard(props: ResultCardTypes) {
       <div>
         <p
           style={{
-            visibility: isError ? "visible" : "hidden",
+            visibility: values.people == 0 ? "visible" : "hidden",
             color: "#F55353",
             marginLeft: "15px",
           }}
         >
-          Nulou dělit nelze!
+          Nula lidí?!
         </p>
       </div>
       <input
