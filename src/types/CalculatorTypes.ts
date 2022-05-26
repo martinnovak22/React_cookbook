@@ -1,4 +1,6 @@
-//interface for imput card props
+import React, { ReactElement, ReactNode } from "react";
+
+//interface for input card props
 export interface InputCardTypes {
   values: { tip: number; bill: number; people: number };
   onValueChange: Function;
@@ -7,5 +9,5 @@ export interface InputCardTypes {
 //interface for result card props
 export interface ResultCardTypes {
   values: { tip: number; bill: number; people: number };
-  setValues: Function;
+  errorMessage: string;
 }

@@ -18,10 +18,17 @@
   font-size: 20px;
   margin-top: 20px;
   align-self: center;
+  justify-content: flex-end;
 }
 
 .results__reset-button:hover {
   cursor: pointer;
+}
+
+.results__errorBox {
+  color: #f55353;
+  margin-left: 15px;
+  min-height: 32px;
 }
 
 /*CSS result components*/

@@ -7,22 +7,33 @@ import "./styles/InputCardStyles.css";
 const tips = [5, 10, 15, 25, 50];
 
 function InputCard(props: InputCardTypes) {
-  function handleCheckReset(): void {
-    const tipReset: NodeListOf<HTMLInputElement> = document.querySelectorAll(
-      "input[type=radio]:checked"
-    );
-    if (tipReset.length !== 0) {
-      tipReset[0].checked = false;
+  function handleCustomTipInput(e: React.FormEvent<HTMLInputElement>): void {
+    props.onValueChange(e);
+
+    //resets radio button check
+    const tipRadioReset: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll("input[type=radio]:checked");
+    if (tipRadioReset.length !== 0) {
+      tipRadioReset[0].checked = false;
     }
   }
 
-  function handleFocus(e: React.FormEvent<HTMLInputElement>) {
-    const target = e.target as HTMLTextAreaElement;
-    target.select();
+  function handleTipInput(e: React.FormEvent<HTMLInputElement>) {
+    props.onValueChange(e);
+
+    //resets custom input when radio button IS checked
+    const tipCustomReset: NodeListOf<HTMLInputElement> =
+      document.querySelectorAll("input[class=input__customTip]");
+    tipCustomReset[0].value = String(0);
+  }
+
+  //selection of text
+  function handleSelect(e: React.FocusEvent<HTMLInputElement>) {
+    e.target.select();
   }
 
   return (
-    <form className={"inputs"}>
+    <div className={"inputs"}>
       <div className={"inputs__inputBox"}>
         <label htmlFor={"input__billInput"} className={"input__label"}>
           Bill
@@ -32,8 +43,8 @@ function InputCard(props: InputCardTypes) {
           name="bill"
           id={"input__billInput"}
           className={"input__num billInput"}
-          onChange={(e) => props.onValueChange(e)}
-          onFocus={handleFocus}
+          onInput={(e) => props.onValueChange(e)}
+          onFocus={handleSelect}
           defaultValue={0}
           min={0}
         />
@@ -47,7 +58,7 @@ function InputCard(props: InputCardTypes) {
                 type={"radio"}
                 name={"tip"}
                 className={"input__radio"}
-                onChange={(e) => props.onValueChange(e)}
+                onChange={handleTipInput}
                 value={tip}
               />
               <span className={"input__span"}>{tip + "%"}</span>
@@ -57,9 +68,8 @@ function InputCard(props: InputCardTypes) {
             type={"number"}
             name={"tip"}
             className={"input__customTip"}
-            onChange={(e) => props.onValueChange(e)}
-            onInput={handleCheckReset}
-            onFocus={handleFocus}
+            onInput={handleCustomTipInput}
+            onFocus={handleSelect}
             defaultValue={0}
           />
         </div>
@@ -73,13 +83,13 @@ function InputCard(props: InputCardTypes) {
           name="people"
           id={"input__peopleInput"}
           className={"input__num peopleInput"}
-          onChange={(e) => props.onValueChange(e)}
-          onFocus={handleFocus}
+          onInput={(e) => props.onValueChange(e)}
+          onFocus={handleSelect}
           defaultValue={1}
           min={1}
         />
       </div>
-    </form>
+    </div>
   );
 }
 

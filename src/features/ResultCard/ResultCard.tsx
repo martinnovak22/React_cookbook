@@ -1,7 +1,6 @@
 import React from "react";
-import formatNumber from "../../utils/numberFormat.js";
+import { formatNumber } from "../../utils/numberUtils.js";
 import ResultComponent from "./components/ResultComponent";
-import { DEFAULT_VALUES } from "../../Calculator";
 import { ResultCardTypes } from "../../types/CalculatorTypes";
 
 import "./styles/ResultCardStyles.css";
@@ -35,9 +34,7 @@ export default function ResultCard(props: ResultCardTypes) {
   function handleReset(): void {
     const formElement: NodeListOf<HTMLFormElement> =
       document.querySelectorAll("form");
-
     formElement[0].reset();
-    props.setValues(DEFAULT_VALUES);
   }
 
   return (
@@ -47,16 +44,15 @@ export default function ResultCard(props: ResultCardTypes) {
         title={RESULTS.TOTAL_AMOUNT}
         calculate={calculateTotal()}
       />
-      <div>
+      <div className={"results__errorBox"}>
         <p
           style={{
             visibility: values.people == 0 ? "visible" : "hidden",
-            color: "#F55353",
-            marginLeft: "15px",
           }}
         >
           Nula lidí?!
         </p>
+        <p>{props.errorMessage}</p>
       </div>
       <input
         type="reset"
