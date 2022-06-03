@@ -126,7 +126,7 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Space Mono", sans-serif;
   margin: 0;
   background-color: hsl(185, 41%, 84%);
@@ -153,5 +153,9 @@ table {
 @media only screen and (max-width: 900px) {
   .app__container {
     flex-direction: column;
+  }
+
+  .app {
+    padding-bottom: 20px;
   }
 }

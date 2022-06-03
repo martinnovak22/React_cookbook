@@ -18,7 +18,7 @@ function InputCard(props: InputCardTypes) {
     }
   }
 
-  function handleTipInput(e: React.FormEvent<HTMLInputElement>) {
+  function handleTipInput(e: React.FormEvent<HTMLInputElement>): void {
     props.onValueChange(e);
 
     //resets custom input when radio button IS checked
@@ -28,7 +28,7 @@ function InputCard(props: InputCardTypes) {
   }
 
   //selection of text
-  function handleSelect(e: React.FocusEvent<HTMLInputElement>) {
+  function handleSelect(e: React.FocusEvent<HTMLInputElement>): void {
     e.target.select();
   }
 

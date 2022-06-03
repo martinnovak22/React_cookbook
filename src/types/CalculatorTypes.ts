@@ -1,5 +1,3 @@
-import React, { ReactElement, ReactNode } from "react";
-
 //interface for input card props
 export interface InputCardTypes {
   values: { tip: number; bill: number; people: number };

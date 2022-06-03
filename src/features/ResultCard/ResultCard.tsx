@@ -13,14 +13,15 @@ const RESULTS = {
 export default function ResultCard(props: ResultCardTypes) {
   const values = props.values;
 
+  //calculates tip per person
   function calculateTip(): string {
     if (values.people == 0) {
       return formatNumber(0);
     }
-
     return formatNumber(((values.bill / 100) * values.tip) / values.people);
   }
 
+  //calculates total per person
   function calculateTotal(): string {
     if (values.people == 0) {
       return formatNumber(0);
@@ -30,10 +31,10 @@ export default function ResultCard(props: ResultCardTypes) {
     );
   }
 
-  // complete reset
+  // complete reset of form
   function handleReset(): void {
     const formElement: NodeListOf<HTMLFormElement> =
-      document.querySelectorAll("form");
+      document.querySelectorAll("form[class=app]");
     formElement[0].reset();
   }
 

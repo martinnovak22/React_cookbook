@@ -31,7 +31,7 @@ export default function Calculator() {
   }
 
   //reset of values and error message
-  function handleReset() {
+  function handleReset(): void {
     setValues(DEFAULT_VALUES);
     setErrorMessage("");
   }
@@ -46,5 +46,3 @@ export default function Calculator() {
     </form>
   );
 }
-
-// TODO začištění kódu
