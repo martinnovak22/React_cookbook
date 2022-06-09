@@ -1,3 +1,15 @@
+/*main part of app*/
+.form__container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 800px;
+  min-height: 35%;
+  padding: 30px;
+}
+
+/*input part of app*/
 .inputs {
   display: flex;
   flex-direction: column;
@@ -89,21 +101,90 @@
 
 /*small icons in inputs*/
 .billInput {
-  background: hsl(185, 41%, 84%) url("../assets/images/icon-dollar.svg") 3%
+  background: hsl(185, 41%, 84%) url("src/assets/icons/icon-dollar.svg") 3%
     no-repeat;
 }
 
 .peopleInput {
-  background: hsl(185, 41%, 84%) url("../assets/images/icon-person.svg") 3%
+  background: hsl(185, 41%, 84%) url("src/assets/icons/icon-person.svg") 3%
     no-repeat;
 }
 
+/*result part of app*/
+/*CSS for whole card*/
+.results {
+  background-color: hsl(183, 100%, 15%);
+  width: 50%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*reset button*/
+.results__reset-button {
+  background-color: hsl(172, 67%, 45%);
+  border-radius: 5px;
+  border: none;
+  width: 80%;
+  height: 40px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 20px;
+  align-self: center;
+  justify-content: flex-end;
+}
+
+.results__reset-button:hover {
+  cursor: pointer;
+}
+
+.results__errorBox {
+  color: #f55353;
+  margin-left: 15px;
+  min-height: 32px;
+}
+
+/*CSS result components*/
+
+/*boxes for each result*/
+.result {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.result__text {
+  color: white;
+}
+
+.result__text-mod {
+  color: hsl(186, 14%, 56%);
+}
+
+.result__output {
+  margin-right: 20px;
+  color: hsl(172, 67%, 45%);
+  font-weight: 700;
+  font-size: 25px;
+}
+
 @media only screen and (max-width: 900px) {
+  .form__container {
+    flex-direction: column;
+  }
+
   .inputs {
     width: 100%;
   }
 
   .input__tipTable {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .results {
+    margin-top: 20px;
+    padding: 0 0 30px;
+    width: 100%;
   }
 }

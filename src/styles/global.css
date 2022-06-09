@@ -138,23 +138,8 @@ table {
   margin: 70px;
 }
 
-/*main part of app*/
-.app__container {
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 15px;
-  max-width: 800px;
-  min-height: 35%;
-  padding: 30px;
-}
-
 /*basis responsiveness*/
 @media only screen and (max-width: 900px) {
-  .app__container {
-    flex-direction: column;
-  }
-
   .app {
     padding-bottom: 20px;
   }

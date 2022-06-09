@@ -1,7 +1,7 @@
-import Calculator from "./Calculator";
+import TipCalculator from "./modules/tipCalculator/tipCalculator";
 
 function App() {
-  return <Calculator />;
+  return <TipCalculator />;
 }
 
 export default App;
