@@ -13,11 +13,9 @@ export default function TipCalculator() {
     setValues({ ...values, [name]: Number(value) });
   }
 
-  console.log(values);
-
   //reset of values and error message
   function handleReset(): void {
-    setValues(DEFAULT_VALUES);
+    setValues((prevState) => (prevState = DEFAULT_VALUES));
   }
 
   return (

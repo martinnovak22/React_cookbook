@@ -1,53 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import ResultBlock from "./resultBlock";
+import InputBlock from "./inputBlock";
+import { tip, total } from "../utils/calculations";
+import { handleFocus, handleClick } from "../utils/inputBehavior";
 
-//interface for form
+// interface for form
 export interface calculatorTypes {
   values: { tip: number; bill: number; people: number };
   onValueChange: CallableFunction;
 }
 
+// enum with input names
+enum inputNames {
+  BILL = "bill",
+  TIP = "tip",
+  PEOPLE = "people",
+}
+
+// array for radio button values
 const tips = [5, 10, 15, 25, 50];
+
 function CalculatorForm({ values, onValueChange }: calculatorTypes) {
-  // function handleCustomTipInput(e: React.FormEvent<HTMLInputElement>): void {
-  //   props.onValueChange(e);
-  //
-  //   //resets radio button check
-  //   const tipRadioReset: NodeListOf<HTMLInputElement> =
-  //     document.querySelectorAll("input[type=radio]:checked");
-  //   if (tipRadioReset.length !== 0) {
-  //     tipRadioReset[0].checked = false;
-  //   }
-  // }
-  //
-  // function handleTipInput(e: React.FormEvent<HTMLInputElement>): void {
-  //   props.onValueChange(e);
-  //
-  //   //resets custom input when radio button IS checked
-  //   const tipCustomReset: NodeListOf<HTMLInputElement> =
-  //     document.querySelectorAll("input[class=input__customTip]");
-  //   tipCustomReset[0].value = String(0);
-  // }
+  const customTipInputRef = useRef<HTMLInputElement>(null);
 
-  //selection of text
-  // function handleSelect(e: React.FocusEvent<HTMLInputElement>): void {
-  //   e.target.select();
-  // }
-
-  const tip = () => {
-    if (values.people == 0) {
-      return 0;
-    }
-    return ((values.bill / 100) * values.tip) / values.people;
-  };
-
-  const total = () => {
-    if (values.people == 0) {
-      return 0;
-    }
-    return (values.bill + (values.bill / 100) * values.tip) / values.people;
-  };
-
+  // handles all value changes
   function handleChange(event: React.FormEvent<HTMLFormElement>) {
     const targetedInput = event.target as HTMLInputElement;
     const name = targetedInput.name;
@@ -55,22 +31,18 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
     onValueChange(name, value);
   }
 
+  console.log(values);
+
   return (
     <form className={"form__container"} onChange={(e) => handleChange(e)}>
       <div className={"inputs"}>
-        <div className={"inputs__inputBox"}>
-          <label htmlFor={"input__billInput"} className={"input__label"}>
-            Bill
-          </label>
-          <input
-            id={"input__billInput"}
-            type="number"
-            name="bill"
-            defaultValue={0}
-            min={0}
-            className={"input__num billInput"}
-          />
-        </div>
+        <InputBlock
+          title={"Bill"}
+          inputName={inputNames.BILL}
+          defaultValue={0}
+          id={inputNames.BILL + "__id"}
+          iconClass={"billInput"}
+        />
         <div className={"inputs__inputBox"}>
           <label className={"input__label"}>Select tip %</label>
           <div className={"input__tipTable"}>
@@ -78,38 +50,35 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
               <label key={tip}>
                 <input
                   type={"radio"}
-                  name={"tip"}
+                  name={inputNames.TIP}
                   value={tip}
+                  onClick={() => handleClick(customTipInputRef)}
                   className={"input__radio"}
                 />
                 <span className={"input__span"}>{tip + "%"}</span>
               </label>
             ))}
             <input
+              ref={customTipInputRef}
               type={"number"}
-              name={"tip"}
+              name={inputNames.TIP}
               defaultValue={0}
+              onFocus={handleFocus}
               className={"input__customTip"}
             />
           </div>
         </div>
-        <div className={"inputs__inputBox"}>
-          <label htmlFor={"input__peopleInput"} className={"input__label"}>
-            Number of people
-          </label>
-          <input
-            id={"input__peopleInput"}
-            type="number"
-            name="people"
-            defaultValue={1}
-            min={1}
-            className={"input__num peopleInput"}
-          />
-        </div>
+        <InputBlock
+          title={"People"}
+          inputName={inputNames.PEOPLE}
+          defaultValue={1}
+          id={inputNames.PEOPLE + "__id"}
+          iconClass={"peopleInput"}
+        />
       </div>
       <div className={"results"}>
-        <ResultBlock title={"Tip amount"} value={tip} />
-        <ResultBlock title={"Total amount"} value={total} />
+        <ResultBlock title={"Tip amount"} value={tip(values)} />
+        <ResultBlock title={"Total amount"} value={total(values)} />
         <div className={"results__errorBox"}>
           <p
             style={{

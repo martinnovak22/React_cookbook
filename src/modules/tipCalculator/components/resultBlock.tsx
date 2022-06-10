@@ -3,7 +3,7 @@ import { formatNumber } from "../../../utils/numberUtils";
 
 interface resultTypes {
   title: string;
-  value: () => number;
+  value: number;
 }
 function ResultBlock({ title, value }: resultTypes) {
   const result = formatNumber(value);
