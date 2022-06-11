@@ -2,10 +2,14 @@ import React, { useRef } from "react";
 import ResultBlock from "./resultBlock";
 import InputBlock from "./inputBlock";
 import { tip, total } from "../utils/calculations";
-import { handleFocus, handleClick } from "../utils/inputBehavior";
+import {
+  handleFocus,
+  clearCustomTip,
+  clearCheckedRadio,
+} from "../utils/inputBehavior";
 
 // interface for form
-export interface calculatorTypes {
+interface calculatorTypes {
   values: { tip: number; bill: number; people: number };
   onValueChange: CallableFunction;
 }
@@ -22,6 +26,7 @@ const tips = [5, 10, 15, 25, 50];
 
 function CalculatorForm({ values, onValueChange }: calculatorTypes) {
   const customTipInputRef = useRef<HTMLInputElement>(null);
+  const radioTipInputRef = useRef<HTMLDivElement>(null);
 
   // handles all value changes
   function handleChange(event: React.FormEvent<HTMLFormElement>) {
@@ -29,6 +34,16 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
     const name = targetedInput.name;
     const value = targetedInput.value;
     onValueChange(name, value);
+  }
+
+  //handles click on radio (setting custom tip to 0)
+  function handleClick() {
+    clearCustomTip(customTipInputRef);
+  }
+
+  //handles input of custom tip
+  function handleInput() {
+    clearCheckedRadio(radioTipInputRef);
   }
 
   console.log(values);
@@ -45,14 +60,14 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
         />
         <div className={"inputs__inputBox"}>
           <label className={"input__label"}>Select tip %</label>
-          <div className={"input__tipTable"}>
+          <div ref={radioTipInputRef} className={"input__tipTable"}>
             {tips.map((tip) => (
               <label key={tip}>
                 <input
                   type={"radio"}
                   name={inputNames.TIP}
                   value={tip}
-                  onClick={() => handleClick(customTipInputRef)}
+                  onClick={handleClick}
                   className={"input__radio"}
                 />
                 <span className={"input__span"}>{tip + "%"}</span>
@@ -64,6 +79,7 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
               name={inputNames.TIP}
               defaultValue={0}
               onFocus={handleFocus}
+              onInput={handleInput}
               className={"input__customTip"}
             />
           </div>

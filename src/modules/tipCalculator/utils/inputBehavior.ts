@@ -5,11 +5,23 @@ function handleFocus(e: React.FocusEvent<HTMLInputElement>) {
   e.target.select();
 }
 
-// resets radio button
-function handleClick(customTipInputRef: React.RefObject<HTMLInputElement>) {
+// clears custom tip input when radio button is pressed
+function clearCustomTip(customTipInputRef: React.RefObject<HTMLInputElement>) {
   if (customTipInputRef.current) {
-    customTipInputRef.current.value = "0";
+    customTipInputRef.current.value = customTipInputRef.current.defaultValue;
   }
 }
 
-export { handleClick, handleFocus };
+// clears radio button when custom tip is typed
+function clearCheckedRadio(radioTipInputRef: React.RefObject<HTMLDivElement>) {
+  const radioInputsArr = [].slice.call(
+    radioTipInputRef.current?.getElementsByTagName("input")
+  );
+  radioInputsArr.map((radio: HTMLInputElement) => {
+    if (radio.checked) {
+      radio.checked = false;
+    }
+  });
+}
+
+export { clearCustomTip, handleFocus, clearCheckedRadio };
