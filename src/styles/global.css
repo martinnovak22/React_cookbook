@@ -129,7 +129,7 @@ table {
   min-height: 100vh;
   font-family: "Space Mono", sans-serif;
   margin: 0;
-  background-color: hsl(185, 41%, 84%);
+  background-color: rgb(197, 228, 231);
 }
 
 /*logo of this app*/

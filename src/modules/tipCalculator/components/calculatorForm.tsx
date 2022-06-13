@@ -49,8 +49,8 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
   console.log(values);
 
   return (
-    <form className={"form__container"} onChange={(e) => handleChange(e)}>
-      <div className={"inputs"}>
+    <form className={"form"} onChange={(e) => handleChange(e)}>
+      <div className={"form__inputs"}>
         <InputBlock
           title={"Bill"}
           inputName={inputNames.BILL}
@@ -59,8 +59,8 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
           iconClass={"billInput"}
         />
         <div className={"inputs__inputBox"}>
-          <label className={"input__label"}>Select tip %</label>
-          <div ref={radioTipInputRef} className={"input__tipTable"}>
+          <label className={"inputBox__label"}>Select tip %</label>
+          <div ref={radioTipInputRef} className={"inputBox__tipTable"}>
             {tips.map((tip) => (
               <label key={tip}>
                 <input
@@ -68,9 +68,9 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
                   name={inputNames.TIP}
                   value={tip}
                   onClick={handleClick}
-                  className={"input__radio"}
+                  className={"tipTable__radio"}
                 />
-                <span className={"input__span"}>{tip + "%"}</span>
+                <span className={"tipTable__span"}>{tip + "%"}</span>
               </label>
             ))}
             <input
@@ -80,7 +80,7 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
               defaultValue={0}
               onFocus={handleFocus}
               onInput={handleInput}
-              className={"input__customTip"}
+              className={"inputBox__customTip"}
             />
           </div>
         </div>
@@ -92,7 +92,7 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
           iconClass={"peopleInput"}
         />
       </div>
-      <div className={"results"}>
+      <div className={"form__results"}>
         <ResultBlock title={"Tip amount"} value={tip(values)} />
         <ResultBlock title={"Total amount"} value={total(values)} />
         <div className={"results__errorBox"}>

@@ -16,10 +16,10 @@ export default function InputBlock({
   id,
   iconClass,
 }: InputBlock) {
-  const classes = "input__num " + iconClass;
+  const classes = "inputBox__num " + iconClass;
   return (
     <div className={"inputs__inputBox"}>
-      <label htmlFor={id} className={"input__label"}>
+      <label htmlFor={id} className={"inputBox__label"}>
         {title}
       </label>
       <input

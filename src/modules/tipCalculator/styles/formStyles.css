@@ -1,5 +1,5 @@
 /*main part of app*/
-.form__container {
+.form {
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -10,7 +10,7 @@
 }
 
 /*input part of app*/
-.inputs {
+.form__inputs {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -22,7 +22,7 @@
 }
 
 /*table of radio buttons and custom input*/
-.input__tipTable {
+.inputBox__tipTable {
   display: grid;
   justify-self: center;
   width: 100%;
@@ -31,11 +31,11 @@
 }
 
 /*input for custom tip %*/
-.input__customTip {
+.inputBox__customTip {
   border-radius: 5px;
   min-height: 30px;
   border: none;
-  background-color: hsl(185, 41%, 84%);
+  background-color: rgb(197, 228, 231);
   justify-self: center;
   width: 100%;
   text-align: center;
@@ -43,37 +43,37 @@
 }
 
 /*hiding up/down buttons*/
-.input__customTip::-webkit-inner-spin-button {
+.inputBox__customTip::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
 /*custom radio buttons*/
-.input__span {
+.tipTable__span {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 15px;
   color: white;
   border-radius: 5px;
-  background-color: hsl(183, 100%, 15%);
+  background-color: rgb(0, 73, 77);
   min-height: 40px;
 }
 
-.input__span:hover {
+.tipTable__span:hover {
   cursor: pointer;
 }
 
-.input__radio {
+.tipTable__radio {
   display: none;
 }
 
-.input__radio:checked + .input__span {
-  background-color: hsl(172, 67%, 45%);
-  color: hsl(183, 100%, 15%);
+.tipTable__radio:checked + .input__span {
+  background-color: rgb(38, 192, 171);
+  color: rgb(0, 73, 77);
 }
 
 /*basic input*/
-.input__num {
+.inputBox__num {
   border-radius: 5px;
   min-height: 30px;
   text-align: right;
@@ -85,35 +85,34 @@
 }
 
 /*hiding up/down buttons*/
-.input__num::-webkit-inner-spin-button {
+.inputBox__num::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
 /*labels for those basic inputs*/
-.input__label {
+.inputBox__label {
   display: inline-block;
   padding: 20px 0 10px;
 }
 
-.input__label:hover {
+.inputBox__label:hover {
   cursor: pointer;
 }
 
 /*small icons in inputs*/
 .billInput {
-  background: hsl(185, 41%, 84%) url("src/assets/icons/icon-dollar.svg") 3%
+  background: rgb(197, 228, 231) url("src/assets/icons/icon-dollar.svg") 3%
     no-repeat;
 }
 
 .peopleInput {
-  background: hsl(185, 41%, 84%) url("src/assets/icons/icon-person.svg") 3%
+  background: rgb(197, 228, 231) url("src/assets/icons/icon-person.svg") 3%
     no-repeat;
 }
 
 /*result part of app*/
-/*CSS for whole card*/
-.results {
-  background-color: hsl(183, 100%, 15%);
+.form__results {
+  background-color: rgb(0, 73, 77);
   width: 50%;
   border-radius: 15px;
   display: flex;
@@ -122,7 +121,7 @@
 
 /*reset button*/
 .results__reset-button {
-  background-color: hsl(172, 67%, 45%);
+  background-color: rgb(38, 192, 171);
   border-radius: 5px;
   border: none;
   width: 80%;
@@ -139,7 +138,7 @@
 }
 
 .results__errorBox {
-  color: #f55353;
+  color: rgb(245, 83, 83);
   margin-left: 15px;
   min-height: 32px;
 }
@@ -147,42 +146,42 @@
 /*CSS result components*/
 
 /*boxes for each result*/
-.result {
+.results__resultBox {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
   margin-top: 40px;
 }
 
-.result__text {
+.resultBox__text {
   color: white;
 }
 
-.result__text-mod {
-  color: hsl(186, 14%, 56%);
+.resultBox__text-mod {
+  color: rgb(127, 155, 159);
 }
 
-.result__output {
+.resultBox__output {
   margin-right: 20px;
-  color: hsl(172, 67%, 45%);
+  color: rgb(38, 192, 171);
   font-weight: 700;
   font-size: 25px;
 }
 
 @media only screen and (max-width: 900px) {
-  .form__container {
+  .form {
     flex-direction: column;
   }
 
-  .inputs {
+  .form__inputs {
     width: 100%;
   }
 
-  .input__tipTable {
+  .inputBox__tipTable {
     grid-template-columns: 1fr 1fr;
   }
 
-  .results {
+  .form__results {
     margin-top: 20px;
     padding: 0 0 30px;
     width: 100%;
