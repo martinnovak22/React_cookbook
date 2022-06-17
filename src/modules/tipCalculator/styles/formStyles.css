@@ -67,7 +67,7 @@
   display: none;
 }
 
-.tipTable__radio:checked + .input__span {
+.tipTable__radio:checked + .tipTable__span {
   background-color: rgb(38, 192, 171);
   color: rgb(0, 73, 77);
 }
@@ -166,6 +166,14 @@
   color: rgb(38, 192, 171);
   font-weight: 700;
   font-size: 25px;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 @media only screen and (max-width: 900px) {

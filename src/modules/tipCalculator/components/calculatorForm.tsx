@@ -96,11 +96,7 @@ function CalculatorForm({ values, onValueChange }: calculatorTypes) {
         <ResultBlock title={"Tip amount"} value={tip(values)} />
         <ResultBlock title={"Total amount"} value={total(values)} />
         <div className={"results__errorBox"}>
-          <p
-            style={{
-              visibility: values.people == 0 ? "visible" : "hidden",
-            }}
-          >
+          <p className={values.people == 0 ? "visible" : "hidden"}>
             Nula lidí?!
           </p>
         </div>
