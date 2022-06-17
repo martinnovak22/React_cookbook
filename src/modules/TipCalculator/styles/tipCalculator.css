@@ -1,5 +1,5 @@
 /*main part of app*/
-.form {
+.tc---form {
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -10,14 +10,14 @@
 }
 
 /*input part of app*/
-.form__inputs {
+.tc---form__inputs {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin-right: 20px;
 }
 
-.inputs__inputBox {
+.inputBox {
   width: 100%;
 }
 
@@ -111,7 +111,7 @@
 }
 
 /*result part of app*/
-.form__results {
+.tc---form__results {
   background-color: rgb(0, 73, 77);
   width: 50%;
   border-radius: 15px;
@@ -120,7 +120,7 @@
 }
 
 /*reset button*/
-.results__reset-button {
+.tc---results__reset-button {
   background-color: rgb(38, 192, 171);
   border-radius: 5px;
   border: none;
@@ -133,11 +133,11 @@
   justify-content: flex-end;
 }
 
-.results__reset-button:hover {
+.tc---results__reset-button:hover {
   cursor: pointer;
 }
 
-.results__errorBox {
+.tc---results__errorBox {
   color: rgb(245, 83, 83);
   margin-left: 15px;
   min-height: 32px;
@@ -146,7 +146,7 @@
 /*CSS result components*/
 
 /*boxes for each result*/
-.results__resultBox {
+.resultBox {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -168,20 +168,12 @@
   font-size: 25px;
 }
 
-.visible {
-  visibility: visible;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
 @media only screen and (max-width: 900px) {
-  .form {
+  .tc---form {
     flex-direction: column;
   }
 
-  .form__inputs {
+  .tc---form__inputs {
     width: 100%;
   }
 
@@ -189,7 +181,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .form__results {
+  .tc---form__results {
     margin-top: 20px;
     padding: 0 0 30px;
     width: 100%;

@@ -1,4 +1,6 @@
-import TipCalculator from "./modules/tipCalculator/tipCalculator";
+import "/src/styles/global.css";
+import "./styles/utils.css";
+import TipCalculator from "./modules/TipCalculator/TipCalculator";
 
 function App() {
   return <TipCalculator />;

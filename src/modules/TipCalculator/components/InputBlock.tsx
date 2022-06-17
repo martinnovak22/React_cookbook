@@ -1,34 +1,35 @@
-import React from "react";
-import { handleFocus } from "../utils/inputBehavior";
+import { selectInputOnFocus } from "../utils/inputBehavior";
 
-interface InputBlock {
+interface InputBlockProps {
   title: string;
-  inputName: string;
+  name: string;
   defaultValue: number;
+  min: number;
   id: string;
   iconClass: string;
 }
 
 export default function InputBlock({
   title,
-  inputName,
+  name,
   defaultValue,
   id,
   iconClass,
-}: InputBlock) {
+  min,
+}: InputBlockProps) {
   const classes = "inputBox__num " + iconClass;
   return (
-    <div className={"inputs__inputBox"}>
+    <div className={"inputBox"}>
       <label htmlFor={id} className={"inputBox__label"}>
         {title}
       </label>
       <input
         id={id}
         type="number"
-        name={inputName}
+        name={name}
         defaultValue={defaultValue}
-        onFocus={handleFocus}
-        min={defaultValue}
+        onFocus={selectInputOnFocus}
+        min={min}
         className={classes}
       />
     </div>

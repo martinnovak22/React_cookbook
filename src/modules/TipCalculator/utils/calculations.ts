@@ -1,13 +1,13 @@
-type calculationValues = { tip: number; bill: number; people: number };
+import { CalculationValues } from "../types";
 
-const tip = (values: calculationValues) => {
+const tip = (values: CalculationValues) => {
   if (values.people == 0) {
     return 0;
   }
   return ((values.bill / 100) * values.tip) / values.people;
 };
 
-const total = (values: calculationValues) => {
+const total = (values: CalculationValues) => {
   if (values.people == 0) {
     return 0;
   }

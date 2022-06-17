@@ -1,7 +1,7 @@
 import React from "react";
 
 // select all in input
-function handleFocus(e: React.FocusEvent<HTMLInputElement>) {
+function selectInputOnFocus(e: React.FocusEvent<HTMLInputElement>) {
   e.target.select();
 }
 
@@ -17,11 +17,11 @@ function clearCheckedRadio(radioTipInputRef: React.RefObject<HTMLDivElement>) {
   const radioInputsArr = [].slice.call(
     radioTipInputRef.current?.getElementsByTagName("input")
   );
-  radioInputsArr.map((radio: HTMLInputElement) => {
+  radioInputsArr.forEach((radio: HTMLInputElement) => {
     if (radio.checked) {
       radio.checked = false;
     }
   });
 }
 
-export { clearCustomTip, handleFocus, clearCheckedRadio };
+export { clearCustomTip, selectInputOnFocus, clearCheckedRadio };
