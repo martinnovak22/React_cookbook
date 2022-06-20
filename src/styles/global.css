@@ -85,7 +85,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -122,25 +121,28 @@ table {
   box-sizing: border-box;
 }
 
-.app {
+.navbar {
+  min-height: 5vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(90, 103, 222);
+}
+
+.navbar__list {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  min-height: 100vh;
+}
+
+.navbar__item {
   font-family: "Space Mono", sans-serif;
-  margin: 0;
-  background-color: rgb(197, 228, 231);
+  text-decoration: none;
+  color: white;
+  display: flex;
+  padding: 20px;
 }
 
-/*logo of this app*/
-.app__logo {
-  max-width: 100px;
-  margin: 70px;
-}
-
-/*basis responsiveness*/
-@media only screen and (max-width: 900px) {
-  .app {
-    padding-bottom: 20px;
-  }
+.navbar__item--active {
+  background-color: rgb(67, 81, 199);
 }
