@@ -1,0 +1,53 @@
+.nft__card {
+  max-width: 33%;
+  background-color: rgb(0, 92, 153);
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Space Mono", sans-serif;
+}
+
+.nft__image {
+  width: 100%;
+}
+
+.nft__title {
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+}
+
+.nft__description {
+  font-size: 1.15rem;
+  color: rgb(217, 217, 217);
+}
+
+.nft__lineBreak {
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  border: none;
+}
+
+.nft__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 10px;
+}
+
+.nft__info--price,
+.nft__info--clock,
+.nft__creator {
+  display: flex;
+  align-items: center;
+}
+
+.nft__info--price {
+  color: rgb(0, 230, 230);
+}
+
+.nft__ethereum {
+  padding-right: 5px;
+}
+
+.nft__clock {
+  padding-right: 5px;
+}
