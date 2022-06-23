@@ -51,3 +51,8 @@
 .nft__clock {
   padding-right: 5px;
 }
+
+.nft__creatorProfile {
+  height: 5vh;
+  padding-right: 5px;
+}

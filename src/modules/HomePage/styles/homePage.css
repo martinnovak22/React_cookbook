@@ -1,0 +1,38 @@
+.HP {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Mono", sans-serif;
+  background-color: rgb(80, 103, 150);
+}
+
+.HP__logo {
+  height: 10%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .HP__logo {
+    animation: HP__logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes HP__logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.HP__title {
+  font-size: 5rem;
+  padding-top: 20px;
+}
+
+.HP__creator {
+  font-size: 2rem;
+}
