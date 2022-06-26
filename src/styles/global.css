@@ -136,13 +136,21 @@ table {
 }
 
 .navbar__item {
+  width: 150px;
   font-family: "Space Mono", sans-serif;
   text-decoration: none;
   color: white;
   display: flex;
+  justify-content: center;
   padding: 20px;
 }
 
 .navbar__item--active {
   background-color: rgb(67, 81, 199);
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar__item {
+    width: 100px;
+  }
 }

@@ -3,6 +3,7 @@ import clock from "../assets/icons/icon-clock.svg";
 import profile from "../assets/images/image-avatar.png";
 
 interface Props {
+  key: number;
   image: string;
   title: string;
   description: string;
@@ -10,7 +11,7 @@ interface Props {
   timeLeft: number;
 }
 
-export function NFTCard({ image, title, description, price, timeLeft }: Props) {
+export function NFTcard({ image, title, description, price, timeLeft }: Props) {
   return (
     <div className={"nft__card"}>
       <div>
