@@ -13,6 +13,18 @@
   height: 10%;
 }
 
+.HP__title {
+  text-align: center;
+  font-size: 65px;
+  padding: 20px;
+}
+
+.HP__creator {
+  text-align: center;
+  font-size: 32px;
+  padding: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .HP__logo {
     animation: HP__logo-spin infinite 20s linear;
@@ -26,13 +38,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.HP__title {
-  font-size: 5rem;
-  padding-top: 20px;
-}
-
-.HP__creator {
-  font-size: 2rem;
 }

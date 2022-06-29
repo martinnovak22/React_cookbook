@@ -122,7 +122,7 @@ table {
 }
 
 .navbar {
-  min-height: 5vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   background-color: rgb(90, 103, 222);
@@ -132,21 +132,24 @@ table {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .navbar__item {
-  width: 150px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__item-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Space Mono", sans-serif;
   text-decoration: none;
   color: white;
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.navbar__item--active {
-  background-color: rgb(67, 81, 199);
 }
 
 @media only screen and (max-width: 600px) {
