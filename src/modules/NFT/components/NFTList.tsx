@@ -1,20 +1,20 @@
 import React from "react";
-import { NFTcard } from "./NFTcard";
-import { dataObject } from "../types";
+import { Card } from "./Card";
+import { DataObject } from "../types";
 
 interface Props {
-  data: Array<dataObject>;
-  loading: boolean;
+  data: Array<DataObject>;
+  isLoading: boolean;
 }
 
-export function NFTs({ data, loading }: Props) {
-  if (loading) {
+export function NFTList({ data, isLoading }: Props) {
+  if (isLoading) {
     return <h2>Loading...</h2>;
   }
   return (
     <div className={"nft__cardLayout"}>
       {data.map((object) => (
-        <NFTcard
+        <Card
           key={object.id}
           image={object.url}
           title={"COOL NFT " + object.id}

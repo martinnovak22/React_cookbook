@@ -1,26 +1,28 @@
 import "./styles/nft.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NFTs } from "./components/NFTs";
-import { dataObject } from "./types";
+import { NFTList } from "./components/NFTList";
+import { DataObject } from "./types";
 import { Pagination } from "./components/Pagination";
+import { useParams } from "react-router-dom";
 
 export function NFT() {
-  const [data, setData] = useState<Array<dataObject>>([]);
-  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState<Array<DataObject>>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  let { pageNumber } = useParams();
   const nftsPerPage = 9;
 
-  // Get all the data (fetch)
+  // Fetch all data
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true);
+      setIsLoading(true);
       const res = await axios.get(
         "https://jsonplaceholder.typicode.com/albums/1/photos"
       );
+      setCurrentPage(Number(pageNumber));
       setData(res.data);
-      setLoading(false);
-      setCurrentPage(getPageUrl);
+      setIsLoading(false);
     };
     fetchPosts();
   }, []);
@@ -33,28 +35,16 @@ export function NFT() {
   // Set page
   const pagination = (number: number) => {
     setCurrentPage(number);
-    setPageUrl(number);
-  };
-
-  // Set page to url
-  const setPageUrl = (number: number) => {
-    history.pushState(null, "", "/nft-cards/" + number);
-  };
-
-  // Get page from url
-  const getPageUrl = () => {
-    const url = window.location.pathname.split("/");
-    return Number(url[url.length - 1]);
   };
 
   return (
     <div className={"nft"}>
+      <NFTList data={currentNfts} isLoading={isLoading} />
       <Pagination
-        nftsPerPage={nftsPerPage}
-        totalNfts={data.length}
+        perPage={nftsPerPage}
+        total={data.length}
         paginate={pagination}
       />
-      <NFTs data={currentNfts} loading={loading} />
     </div>
   );
 }

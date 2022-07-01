@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(180, 222, 255);
+  background-color: hsl(217, 54%, 11%);
 }
 
 .nft__cardLayout {
@@ -17,11 +17,13 @@
 }
 
 .nft__card {
-  width: 100%;
-  background-color: rgb(0, 92, 153);
-  padding: 15px;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: hsl(216, 60%, 16%);
+  border-radius: 10px;
   font-family: "Space Mono", sans-serif;
+  padding: 15px;
 }
 
 .nft__image {
@@ -31,48 +33,54 @@
 .nft__title {
   font-size: 1.5em;
   color: rgb(255, 255, 255);
-  padding: 10px 0;
+  margin-top: 15px;
 }
 
 .nft__description {
-  font-size: 1.15rem;
-  color: rgb(217, 217, 217);
+  min-height: 6vh;
+  font-size: 1rem;
+  margin-top: 15px;
 }
 
 .nft__lineBreak {
-  height: 1px;
-  background-color: rgb(0, 0, 0);
-  border: none;
+  width: 100%;
+  border-color: hsl(215, 32%, 27%);
 }
 
 .nft__info {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0 10px;
+  margin: 10px 0;
+  font-size: 0.9rem;
 }
 
-.nft__info--price,
-.nft__info--clock,
+.nft__info-price,
+.nft__info-clock,
 .nft__creator {
   display: flex;
   align-items: center;
 }
 
-.nft__info--price {
+.nft__info-price {
   color: rgb(0, 230, 230);
 }
 
 .nft__ethereum {
-  padding-right: 5px;
+  margin-right: 7px;
 }
 
 .nft__clock {
-  padding-right: 5px;
+  margin-right: 7px;
+}
+
+.nft__creator,
+.nft__description {
+  color: hsl(215, 51%, 70%);
 }
 
 .nft__creatorProfile {
   height: 5vh;
-  padding-right: 5px;
+  margin-right: 7px;
 }
 
 .nft__navbar {
@@ -88,17 +96,27 @@
   justify-content: center;
 }
 
-.nft__pageButton {
-  width: 50px;
+.nft__pageNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
   height: 25px;
   margin: 0 10px;
-  background-color: rgb(90, 103, 222);
+  background-color: hsl(215, 32%, 27%);
   color: white;
   border: black solid;
   border-radius: 7px;
 }
 
+.nft__pageNumber:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 900px) {
+  .nft {
+    padding: 20px 0;
+  }
   .nft__cardLayout {
     grid-template-columns: 1fr 1fr;
   }
@@ -107,9 +125,5 @@
 @media only screen and (max-width: 600px) {
   .nft__cardLayout {
     grid-template-columns: 1fr;
-  }
-
-  .nft__pageButton {
-    margin: 0 5px;
   }
 }

@@ -5,7 +5,7 @@ interface NavBarLink {
   children: string;
 }
 
-export function CustomLink({ to, children }: NavBarLink) {
+export function NavBarLink({ to, children }: NavBarLink) {
   const activeStyle = {
     backgroundColor: "#1989b7",
   };

@@ -1,6 +1,6 @@
-import ethereum from "../assets/icons/icon-ethereum.svg";
-import clock from "../assets/icons/icon-clock.svg";
-import profile from "../assets/images/image-avatar.png";
+import ethereum from "../assets/icons/ethereum.svg";
+import clock from "../assets/icons/clock.svg";
+import profile from "../assets/images/avatar.png";
 
 interface Props {
   key: number;
@@ -11,24 +11,25 @@ interface Props {
   timeLeft: number;
 }
 
-export function NFTcard({ image, title, description, price, timeLeft }: Props) {
+export function Card({ image, title, description, price, timeLeft }: Props) {
   return (
-    <div className={"nft__card"}>
+    <article className={"nft__card"}>
       <div>
         <img alt={"nft"} src={image} className={"nft__image"} />
       </div>
       <h1 className={"nft__title"}>{title}</h1>
-      <p className={"nft__description"}>{description}</p>
-      <div className={"nft__info"}>
-        <div className={"nft__info--price"}>
+      <span className={"nft__description"}>{description}</span>
+      <section className={"nft__info"}>
+        <div className={"nft__info-price"}>
           <img alt={"ethereum"} src={ethereum} className={"nft__ethereum"} />
-          <p>{price} ETH</p>
+          <span>{price} ETH</span>
         </div>
-        <div className={"nft__info--clock"}>
+        <div className={"nft__info-clock"}>
           <img alt={"clock"} src={clock} className={"nft__clock"} />
-          <p>{timeLeft} day/s left</p>
+          <span>{timeLeft} day/s left</span>
         </div>
-      </div>
+      </section>
+
       <hr className={"nft__lineBreak"} />
       <div className={"nft__creator"}>
         <img
@@ -36,8 +37,8 @@ export function NFTcard({ image, title, description, price, timeLeft }: Props) {
           src={profile}
           className={"nft__creatorProfile"}
         />
-        <p>creation of Martin</p>
+        <span>creation of Martin</span>
       </div>
-    </div>
+    </article>
   );
 }

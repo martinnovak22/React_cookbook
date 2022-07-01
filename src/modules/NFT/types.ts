@@ -1,7 +1,7 @@
-type dataObject = {
+type DataObject = {
   id: number;
   title: string;
   url: string;
 };
 
-export type { dataObject };
+export type { DataObject };
