@@ -125,7 +125,7 @@ table {
   height: 5vh;
   display: flex;
   justify-content: center;
-  background-color: rgb(90, 103, 222);
+  background-color: #5a67de;
 }
 
 .navbar__list {

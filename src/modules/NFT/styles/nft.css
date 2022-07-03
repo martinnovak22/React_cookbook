@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: hsl(217, 54%, 11%);
+  background-color: #0d192b;
 }
 
 .nft__cardLayout {
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
-  background-color: hsl(216, 60%, 16%);
+  background-color: #102441;
   border-radius: 10px;
   font-family: "Space Mono", sans-serif;
   padding: 15px;
@@ -32,7 +32,7 @@
 
 .nft__title {
   font-size: 1.5em;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   margin-top: 15px;
 }
 
@@ -44,7 +44,7 @@
 
 .nft__lineBreak {
   width: 100%;
-  border-color: hsl(215, 32%, 27%);
+  border-color: #2f415b;
 }
 
 .nft__info {
@@ -62,7 +62,7 @@
 }
 
 .nft__info-price {
-  color: rgb(0, 230, 230);
+  color: #00e6e6;
 }
 
 .nft__ethereum {
@@ -75,7 +75,7 @@
 
 .nft__creator,
 .nft__description {
-  color: hsl(215, 51%, 70%);
+  color: #8bacda;
 }
 
 .nft__creatorProfile {
@@ -103,9 +103,9 @@
   min-width: 25px;
   height: 25px;
   margin: 0 10px;
-  background-color: hsl(215, 32%, 27%);
-  color: white;
-  border: black solid;
+  background-color: #2f415b;
+  color: #ffffff;
+  border: #000000 solid;
   border-radius: 7px;
 }
 
