@@ -1,5 +1,4 @@
 .HP {
-  width: 100%;
   height: 95vh;
   display: flex;
   flex-direction: column;
@@ -10,7 +9,7 @@
 }
 
 .HP__logo {
-  height: 10%;
+  height: 5rem;
 }
 
 .HP__title {

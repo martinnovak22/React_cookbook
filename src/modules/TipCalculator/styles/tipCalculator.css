@@ -33,15 +33,10 @@
   margin-right: 20px;
 }
 
-.inputBox {
-  width: 100%;
-}
-
 /*table of radio buttons and custom input*/
 .inputBox__tipTable {
   display: grid;
   justify-self: center;
-  width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
@@ -51,7 +46,7 @@
   border-radius: 5px;
   min-height: 30px;
   border: none;
-  background-color: rgb(197, 228, 231);
+  background-color: #c5e4e7;
   justify-self: center;
   width: 100%;
   text-align: center;
