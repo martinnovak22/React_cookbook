@@ -1,7 +1,10 @@
-type DataObject = {
-  id: number;
+interface NftCardProps {
+  key: number;
+  image: string;
   title: string;
-  url: string;
-};
+  description: string;
+  price: number;
+  timeLeft: number;
+}
 
-export type { DataObject };
+export type { NftCardProps };

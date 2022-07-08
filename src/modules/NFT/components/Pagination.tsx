@@ -18,7 +18,6 @@ export function Pagination({ perPage, total, paginate }: Props) {
   }
 
   const goToPage = (number: number) => {
-    console.log(number);
     navigate("/nft-cards/" + number);
     paginate(number);
   };
