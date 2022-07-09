@@ -1,6 +1,12 @@
 import equilibrium from "./assets/images/equilibrium.jpg";
 import { NftCardProps } from "./types";
 
+function getRandomPrice(min: number, max: number, decimals: number) {
+  const str = (Math.random() * (max - min) + min).toFixed(decimals);
+
+  return parseFloat(str);
+}
+
 export const Data: Array<NftCardProps> = [
   {
     key: 1,
@@ -8,7 +14,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 1",
     description:
       "Lorem ipsum dolor sit amet, consecrate disciplining elite. Interpellates in purus ut mi various rhonchus ac eu rises. Phasellus consectetur sagittis velit vel dictum.",
-    price: 5.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 3,
   },
   {
@@ -17,7 +23,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 2",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 2.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 2,
   },
   {
@@ -26,7 +32,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 3",
     description:
       "Lorem ipsum dolor sit amet, consecrate adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 4.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 5,
   },
   {
@@ -35,7 +41,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 4",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 5.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 4,
   },
   {
@@ -44,7 +50,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 5",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 4.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 5,
   },
   {
@@ -53,7 +59,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 6",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 6.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 1,
   },
   {
@@ -62,7 +68,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 7",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 7.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 1,
   },
   {
@@ -71,7 +77,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 8",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 8.89,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 3,
   },
   {
@@ -80,7 +86,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 9",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 1.87,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 6,
   },
   {
@@ -89,7 +95,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 10",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 5.87,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 7,
   },
   {
@@ -98,7 +104,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 11",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 1.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 3,
   },
   {
@@ -107,7 +113,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 12",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 4.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 2,
   },
   {
@@ -116,7 +122,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 13",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 7.444,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 5,
   },
   {
@@ -125,7 +131,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 14",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 5.49,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 4,
   },
   {
@@ -134,7 +140,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 15",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 1.11,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 5,
   },
   {
@@ -143,7 +149,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 16",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 6.47,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 1,
   },
   {
@@ -152,7 +158,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 17",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 7.489,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 1,
   },
   {
@@ -161,7 +167,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 18",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 7.89,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 3,
   },
   {
@@ -170,7 +176,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 19",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 3.87,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 6,
   },
   {
@@ -179,7 +185,7 @@ export const Data: Array<NftCardProps> = [
     title: "COOL NFT 20",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in purus ut mi varius rhoncus ac eu risus. Phasellus consectetur sagittis velit vel dictum.",
-    price: 13.87,
+    price: getRandomPrice(0.1, 10, 2),
     timeLeft: 7,
   },
 ];

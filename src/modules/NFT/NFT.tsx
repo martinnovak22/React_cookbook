@@ -1,6 +1,5 @@
 import "./styles/nft.css";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { NFTList } from "./components/NFTList";
 import { NftCardProps } from "./types";
 import { Pagination } from "./components/Pagination";
@@ -13,20 +12,6 @@ export function NFT() {
   const [currentPage, setCurrentPage] = useState(1);
   let { pageNumber } = useParams();
   const nftsPerPage = 9;
-
-  // // Fetch all data
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     setIsLoading(true);
-  //     const res = await axios.get(
-  //       "https://jsonplaceholder.typicode.com/albums/1/photos"
-  //     );
-  //     setCurrentPage(Number(pageNumber));
-  //     setData(res.data);
-  //     setIsLoading(false);
-  //   };
-  //   fetchPosts();
-  // }, []);
 
   useEffect(() => {
     setIsLoading(true);
