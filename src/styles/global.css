@@ -135,14 +135,12 @@ table {
 }
 
 .navbar__item {
-  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .navbar__item-text {
-  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -150,6 +148,7 @@ table {
   font-family: "Space Mono", sans-serif;
   text-decoration: none;
   color: white;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 600px) {

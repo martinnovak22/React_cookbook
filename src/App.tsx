@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path={"/"} element={<HomePage />} />
           <Route path={"/tip-app"} element={<TipCalculator />} />
-          <Route path={"/nft-cards/:pageNumber"} element={<NFT />} />
+          <Route path={"/nft-cards"} element={<NFT />} />
         </Routes>
       </div>
     </>

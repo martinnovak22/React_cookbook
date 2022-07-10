@@ -1,4 +1,4 @@
-import { formatPrice } from "../../../utils/numberUtils";
+import { formatPrice } from "../../../utils/number";
 
 interface ResultBlockProps {
   title: string;

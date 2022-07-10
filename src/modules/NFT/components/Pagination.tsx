@@ -1,33 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { usePagination } from "../hooks/usePagination";
+import { activeStyle } from "../../../utils/style";
 
 interface Props {
+  currentPage: number;
   perPage: number;
   total: number;
   paginate: (number: number) => void;
 }
 
-export function Pagination({ perPage, total, paginate }: Props) {
-  let pageNumbers = [];
-  let navigate = useNavigate();
-
-  const pageCount = Math.ceil(total / perPage);
-
-  for (let i = 1; i <= pageCount; i++) {
-    pageNumbers.push(i);
-  }
-
-  const goToPage = (number: number) => {
-    navigate("/nft-cards/" + number);
-    paginate(number);
-  };
+export function Pagination({ currentPage, perPage, total, paginate }: Props) {
+  const pageNumbers = usePagination(perPage, total);
 
   return (
     <nav className={"nft__navbar"}>
       <ul className={"nft__list"}>
         {pageNumbers.map((number) => (
-          <li key={number} onClick={() => goToPage(number)}>
-            <a className={"nft__pageNumber"}>{number}</a>
+          <li key={number} onClick={() => paginate(number)}>
+            <a
+              className={"nft__pageNumber"}
+              style={number == currentPage ? activeStyle : {}}
+            >
+              {number}
+            </a>
           </li>
         ))}
       </ul>

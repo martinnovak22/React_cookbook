@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { activeStyle } from "../utils/style";
 
 interface NavBarLink {
   to: string;
@@ -6,10 +7,6 @@ interface NavBarLink {
 }
 
 export function NavBarLink({ to, children }: NavBarLink) {
-  const activeStyle = {
-    backgroundColor: "#1989b7",
-  };
-
   return (
     <li className={"navbar__item"}>
       <NavLink

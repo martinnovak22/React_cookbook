@@ -3,39 +3,51 @@ import React, { useEffect, useState } from "react";
 import { NFTList } from "./components/NFTList";
 import { NftCardProps } from "./types";
 import { Pagination } from "./components/Pagination";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Data } from "./Data";
 
 export function NFT() {
   const [data, setData] = useState<Array<NftCardProps>>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  let { pageNumber } = useParams();
-  const nftsPerPage = 9;
+  const [searchParams, setSearchParams] = useSearchParams("page=1");
+  const NFTS_PER_PAGE = 9;
 
+  // First load of page
   useEffect(() => {
     setIsLoading(true);
-    setCurrentPage(Number(pageNumber));
+    pagination(getCurrentPage());
     setData(Data);
     setIsLoading(false);
   }, []);
 
-  // Get current nfts for page
-  const indexOfLastNft = currentPage * nftsPerPage;
-  const indexOfFirstNft = indexOfLastNft - nftsPerPage;
-  const currentNfts = data.slice(indexOfFirstNft, indexOfLastNft);
-
-  // Set page
+  // Page change
   const pagination = (number: number) => {
-    setCurrentPage(number);
+    searchParams.set("page", number.toString());
+    setSearchParams(searchParams);
+  };
+
+  // Get current page
+  const getCurrentPage = () => {
+    return Number(searchParams.get("page"));
+  };
+
+  // Get current nfts for page
+  const getCurrentNfts = (currentPage: number, nftsPerPage: number) => {
+    const indexOfLastNft = currentPage * nftsPerPage;
+    const indexOfFirstNft = indexOfLastNft - nftsPerPage;
+    return data.slice(indexOfFirstNft, indexOfLastNft);
   };
 
   return (
     <div className={"nft"}>
-      <NFTList data={currentNfts} isLoading={isLoading} />
+      <NFTList
+        data={getCurrentNfts(getCurrentPage(), NFTS_PER_PAGE)}
+        isLoading={isLoading}
+      />
 
       <Pagination
-        perPage={nftsPerPage}
+        currentPage={getCurrentPage()}
+        perPage={NFTS_PER_PAGE}
         total={data.length}
         paginate={pagination}
       />

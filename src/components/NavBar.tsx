@@ -6,7 +6,7 @@ function NavBar() {
       <ul className={"navbar__list"}>
         <NavBarLink to={"/"}>Home</NavBarLink>
         <NavBarLink to={"/tip-app"}>Tip App</NavBarLink>
-        <NavBarLink to={"/nft-cards/1"}>NTF cards</NavBarLink>
+        <NavBarLink to={"/nft-cards"}>NTF cards</NavBarLink>
       </ul>
     </nav>
   );
