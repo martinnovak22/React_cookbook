@@ -1,13 +1,13 @@
-import "./styles/nft.css";
-import React, { useEffect, useState } from "react";
-import { NFTList } from "./components/NFTList";
+import { useEffect, useState } from "react";
 import { NftCardProps } from "./types";
+import { Data } from "./Data";
+import "./styles/nft.css";
+
+import { NFTList } from "./components/NFTList";
 import { Pagination } from "./components/Pagination";
 import { useSearchParams } from "react-router-dom";
-import { Data } from "./Data";
 
 export function NFT() {
-  const [data, setData] = useState<Array<NftCardProps>>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams("page=1");
   const NFTS_PER_PAGE = 9;
@@ -15,8 +15,8 @@ export function NFT() {
   // First load of page
   useEffect(() => {
     setIsLoading(true);
+    getCurrentNfts(Data, getCurrentPage(), NFTS_PER_PAGE);
     pagination(getCurrentPage());
-    setData(Data);
     setIsLoading(false);
   }, []);
 
@@ -32,25 +32,31 @@ export function NFT() {
   };
 
   // Get current nfts for page
-  const getCurrentNfts = (currentPage: number, nftsPerPage: number) => {
+  const getCurrentNfts = (
+    data: Array<NftCardProps>,
+    currentPage: number,
+    nftsPerPage: number
+  ) => {
     const indexOfLastNft = currentPage * nftsPerPage;
     const indexOfFirstNft = indexOfLastNft - nftsPerPage;
     return data.slice(indexOfFirstNft, indexOfLastNft);
   };
 
   return (
-    <div className={"nft"}>
-      <NFTList
-        data={getCurrentNfts(getCurrentPage(), NFTS_PER_PAGE)}
-        isLoading={isLoading}
-      />
+    <div className={"routing__container"}>
+      <div className={"nft"}>
+        <NFTList
+          data={getCurrentNfts(Data, getCurrentPage(), NFTS_PER_PAGE)}
+          isLoading={isLoading}
+        />
 
-      <Pagination
-        currentPage={getCurrentPage()}
-        perPage={NFTS_PER_PAGE}
-        total={data.length}
-        paginate={pagination}
-      />
+        <Pagination
+          currentPage={getCurrentPage()}
+          perPage={NFTS_PER_PAGE}
+          total={Data.length}
+          paginate={pagination}
+        />
+      </div>
     </div>
   );
 }

@@ -122,7 +122,7 @@ table {
 }
 
 .navbar {
-  height: 5vh;
+  height: 55px;
   display: flex;
   justify-content: center;
   background-color: #5a67de;

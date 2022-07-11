@@ -12,7 +12,7 @@ export function Card({
 }: NftCardProps) {
   return (
     <article className={"nft__card"}>
-      <div>
+      <div className={"nft__imageBox"}>
         <img alt={"nft"} src={image} className={"nft__image"} />
       </div>
 

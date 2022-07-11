@@ -1,4 +1,3 @@
-import React from "react";
 import { usePagination } from "../hooks/usePagination";
 import { activeStyle } from "../../../utils/style";
 
@@ -14,7 +13,7 @@ export function Pagination({ currentPage, perPage, total, paginate }: Props) {
 
   return (
     <nav className={"nft__navbar"}>
-      <ul className={"nft__list"}>
+      <ul className={"nft__pageList"}>
         {pageNumbers.map((number) => (
           <li key={number} onClick={() => paginate(number)}>
             <a
