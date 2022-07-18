@@ -121,15 +121,23 @@ table {
   box-sizing: border-box;
 }
 
+.root__container {
+  height: 100vh;
+}
+
+.routesBox {
+  height: 95%;
+}
+
 .navbar {
-  height: 55px;
+  height: 5%;
   display: flex;
   justify-content: center;
   background-color: #5a67de;
 }
 
 .navbar__list {
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -141,6 +149,7 @@ table {
 }
 
 .navbar__item-text {
+  min-width: 150px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -152,7 +161,7 @@ table {
 }
 
 @media only screen and (max-width: 600px) {
-  .navbar__item {
-    width: 100px;
+  .navbar__item-text {
+    min-width: 120px;
   }
 }

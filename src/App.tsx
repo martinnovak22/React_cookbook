@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div>
+      <div className={"routesBox"}>
         <Routes>
           <Route path={"/"} element={<HomePage />} />
           <Route path={"/tip-app"} element={<TipCalculator />} />
