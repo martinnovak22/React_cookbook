@@ -35,15 +35,21 @@ or with Homebrew:
 
 
 
-### Installation of dependencies
+### Installation of project and dependencies
 1. Clone repo
 
-    `git clone https://github.com/martinnovak22/tip-app`
+   `git clone https://github.com/martinnovak22/tip-app`
 
 
 2. Install packages
 
     `yarn install`
+
+
+3. Run local host
+
+   `yarn dev`
+
 
 
 ## Features
