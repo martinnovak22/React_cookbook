@@ -23,14 +23,11 @@ Also used:
 ### Requirements
 You have to get Yarn to install all dependencies.
 
-with npm:
+Link to Yarn docs page:
 
-    npm install yarn
+      https://classic.yarnpkg.com/en/docs/install
 
-
-or with Homebrew:
-
-    brew install yarn
+Minimal version: 1.22.19
 
 
 
