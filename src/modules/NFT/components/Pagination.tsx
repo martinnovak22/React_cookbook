@@ -1,15 +1,11 @@
-import { usePagination } from "../hooks/usePagination";
 import { activeStyle } from "../../../utils/style";
 
 interface Props {
   currentPage: number;
-  perPage: number;
-  total: number;
+  pageNumbers: number[];
 }
 
-export function Pagination({ currentPage, perPage, total }: Props) {
-  const pageNumbers = usePagination(perPage, total);
-
+export function Pagination({ currentPage, pageNumbers }: Props) {
   return (
     <nav className={"nft__navbar"}>
       <ul className={"nft__pageList"}>
