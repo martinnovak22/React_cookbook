@@ -16,15 +16,8 @@ export function NFT() {
   useEffect(() => {
     setIsLoading(true);
     getCurrentNfts(Data, getCurrentPage(), NFTS_PER_PAGE);
-    pagination(getCurrentPage());
     setIsLoading(false);
   }, []);
-
-  // Page change
-  const pagination = (number: number) => {
-    searchParams.set("page", number.toString());
-    setSearchParams(searchParams);
-  };
 
   // Get current page
   const getCurrentPage = () => {
@@ -54,7 +47,6 @@ export function NFT() {
           currentPage={getCurrentPage()}
           perPage={NFTS_PER_PAGE}
           total={Data.length}
-          paginate={pagination}
         />
       </div>
     </div>
