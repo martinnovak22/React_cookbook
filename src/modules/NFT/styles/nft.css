@@ -35,14 +35,42 @@
 .nft__image {
   width: 320px;
   height: 320px;
-  border: 1px solid #ffffff;
   border-radius: 10px;
+}
+
+.nft__imageView {
+  width: 60px;
+  height: 60px;
+}
+
+.nft__imageOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #00e6e6;
+}
+
+.nft__imageOverlay:hover {
+  opacity: 0.55;
+  cursor: pointer;
 }
 
 .nft__title {
   font-size: 24px;
   color: #ffffff;
+  transition: 0.5s ease;
   margin-top: 15px;
+}
+
+.nft__title:hover {
+  color: #00e6e6;
+  cursor: pointer;
 }
 
 .nft__description {
@@ -79,10 +107,14 @@
 }
 
 .nft__ethereum {
+  height: 20px;
+  width: 15px;
   margin-right: 7px;
 }
 
 .nft__clock {
+  height: 20px;
+  width: 20px;
   margin-right: 7px;
 }
 
@@ -92,8 +124,19 @@
 }
 
 .nft__creatorProfile {
+  width: 45px;
   height: 45px;
-  margin-right: 7px;
+  margin-right: 20px;
+}
+
+.nft__creatorName {
+  color: #ffffff;
+  transition: 0.5s ease;
+}
+
+.nft__creatorName:hover {
+  color: #00e6e6;
+  cursor: pointer;
 }
 
 .nft__navbar {

@@ -1,6 +1,7 @@
 import ethereum from "../assets/icons/ethereum.svg";
 import clock from "../assets/icons/clock.svg";
 import profile from "../assets/images/avatar.png";
+import view from "../assets/icons/view.svg";
 import { NftCardProps } from "../types";
 
 export function Card({
@@ -14,6 +15,9 @@ export function Card({
     <article className={"nft__card"}>
       <div className={"nft__imageBox"}>
         <img alt={"nft"} src={image} className={"nft__image"} />
+        <div className={"nft__imageOverlay"}>
+          <img alt={"view icon"} src={view} className={"nft__imageView"} />
+        </div>
       </div>
 
       <h1 className={"nft__title"}>{title}</h1>
@@ -40,7 +44,9 @@ export function Card({
           src={profile}
           className={"nft__creatorProfile"}
         />
-        <span>creation of Martin</span>
+        <p>
+          Creation of <span className={"nft__creatorName"}>Martin</span>
+        </p>
       </div>
     </article>
   );
