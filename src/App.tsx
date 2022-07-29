@@ -1,23 +1,13 @@
 import "/src/styles/global.css";
 import "./styles/utils.css";
-import { NavBar } from "./components/NavBar";
-import { TipCalculator } from "./modules/TipCalculator";
-import { NFT } from "./modules/NFT/NFT";
-import { HomePage } from "./modules/HomePage/HomePage";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { RouterContainer } from "./routes/RouterContainer";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <div className={"routesBox"}>
-        <Routes>
-          <Route path={"/"} element={<HomePage />} />
-          <Route path={"/tip-app"} element={<TipCalculator />} />
-          <Route path={"/nft-cards"} element={<NFT />} />
-        </Routes>
-      </div>
-    </>
+    <BrowserRouter>
+      <RouterContainer />
+    </BrowserRouter>
   );
 }
 

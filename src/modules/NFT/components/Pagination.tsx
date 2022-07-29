@@ -1,11 +1,15 @@
-import { activeStyle } from "../../../utils/style";
+import { clsx } from "clsx";
 
 interface Props {
   currentPage: number;
   pageNumbers: number[];
 }
 
+const mainClass = "nft__pageNumber";
+const activeClass = "item-active";
+
 export function Pagination({ currentPage, pageNumbers }: Props) {
+  console.log(currentPage);
   return (
     <nav className={"nft__navbar"}>
       <ul className={"nft__pageList"}>
@@ -13,8 +17,12 @@ export function Pagination({ currentPage, pageNumbers }: Props) {
           <li key={number}>
             <a
               href={`nft-cards?page=${number}`}
-              className={"nft__pageNumber"}
-              style={number == currentPage ? activeStyle : {}}
+              className={clsx(
+                {
+                  [activeClass]: number === currentPage,
+                },
+                mainClass
+              )}
             >
               {number}
             </a>

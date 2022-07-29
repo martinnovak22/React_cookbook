@@ -5,3 +5,7 @@
 .hidden {
   visibility: hidden;
 }
+
+.item-active {
+  background-color: #1989b7;
+}
