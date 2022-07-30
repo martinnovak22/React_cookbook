@@ -3,13 +3,13 @@ import { useMemo } from "react";
 import { NftCardProps } from "../types";
 
 export function usePagination(
-  data: Array<NftCardProps>,
+  data: NftCardProps[],
   perPage: number,
   total: number,
   currentPage: number
 ): {
   pageNumbers: number[];
-  currentSetOfItems: Array<NftCardProps>;
+  currentSetOfItems: NftCardProps[];
 } {
   // getting page numbers
   const pageCount = Math.ceil(total / perPage);

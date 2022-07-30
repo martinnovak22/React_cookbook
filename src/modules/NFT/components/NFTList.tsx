@@ -2,7 +2,7 @@ import { Card } from "./Card";
 import { NftCardProps } from "../types";
 
 interface Props {
-  data: Array<NftCardProps>;
+  data: NftCardProps[];
   isLoading: boolean;
 }
 
@@ -14,7 +14,7 @@ export function NFTList({ data, isLoading }: Props) {
     <div className={"nft__cardLayout"}>
       {data.map((object) => (
         <Card
-          key={object.key}
+          key={object.id}
           image={object.image}
           title={object.title}
           description={object.description}

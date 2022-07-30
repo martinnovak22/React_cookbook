@@ -1,5 +1,5 @@
 // Get page numbers
-export const GetPageNumbers = (pageCount: number) => {
+const GetPageNumbers = (pageCount: number) => {
   const pageNumbers: number[] = [];
 
   for (let i = 1; i <= pageCount; i++) {
@@ -10,6 +10,8 @@ export const GetPageNumbers = (pageCount: number) => {
 };
 
 // Get current page
-export const GetCurrentPage = (searchParams: URLSearchParams) => {
+const GetCurrentPage = (searchParams: URLSearchParams) => {
   return Number(searchParams.get("page"));
 };
+
+export { GetCurrentPage, GetPageNumbers };

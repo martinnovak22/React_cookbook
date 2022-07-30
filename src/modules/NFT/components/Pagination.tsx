@@ -9,7 +9,6 @@ const mainClass = "nft__pageNumber";
 const activeClass = "item-active";
 
 export function Pagination({ currentPage, pageNumbers }: Props) {
-  console.log(currentPage);
   return (
     <nav className={"nft__navbar"}>
       <ul className={"nft__pageList"}>

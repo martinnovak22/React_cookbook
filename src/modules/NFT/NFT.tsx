@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { Data } from "./Data";
+import { NftCardProps } from "./types";
 import "./styles/nft.css";
 
 import { NFTList } from "./components/NFTList";
 import { Pagination } from "./components/Pagination";
 import { useSearchParams } from "react-router-dom";
 import { usePagination } from "./hooks/usePagination";
+import { useMock } from "./hooks/useMock";
 import { GetCurrentPage } from "./utils/PaginationUtils";
 
 export function NFT() {
   const [isLoading, setIsLoading] = useState(false);
+  const [nfts, setNfts] = useState<NftCardProps[]>([]);
   const [searchParams, setSearchParams] = useSearchParams("page=1");
   const NFTS_PER_PAGE = 9;
 
@@ -18,16 +20,24 @@ export function NFT() {
 
   // Data from pagination (page numbers and current set of items)
   const { pageNumbers, currentSetOfItems } = usePagination(
-    Data,
+    nfts,
     NFTS_PER_PAGE,
-    Data.length,
+    nfts.length,
     currentPage
   );
 
-  // First load of page
+  // Load of component (fake fetch from api)
   useEffect(() => {
     setIsLoading(true);
-    setIsLoading(false);
+
+    const doGetNfts = async () => {
+      const result = await useMock();
+      setNfts(result);
+    };
+    setTimeout(() => {
+      doGetNfts();
+      setIsLoading(false);
+    }, 700);
   }, []);
 
   return (

@@ -4,13 +4,8 @@ import profile from "../assets/images/avatar.png";
 import view from "../assets/icons/view.svg";
 import { NftCardProps } from "../types";
 
-export function Card({
-  image,
-  title,
-  description,
-  price,
-  timeLeft,
-}: NftCardProps) {
+type Props = Omit<NftCardProps, "id">;
+export function Card({ image, title, description, price, timeLeft }: Props) {
   return (
     <article className={"nft__card"}>
       <div className={"nft__imageBox"}>
@@ -20,7 +15,9 @@ export function Card({
         </div>
       </div>
 
-      <h1 className={"nft__title"}>{title}</h1>
+      <h1 className={"nft__title"}>
+        {title.charAt(0).toUpperCase() + title.slice(1)}
+      </h1>
 
       <span className={"nft__description"}>{description}</span>
 
