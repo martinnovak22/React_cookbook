@@ -1,6 +1,6 @@
 # README - Coding cookbook
 
-Tip Calculator, NFT list + pagination
+Tip Calculator, NFT list + pagination, AJ/CZ Memory game
 
 ## About this APP:
  This app was made for study activities, it tries to use and show every possible function of `JS`, `TS` and `React` packed with `Vite` so any time i am not sure with something, i can come back and guide my self towards the right answer.
@@ -56,6 +56,7 @@ Minimal version: 1.22.19
 
 - NFT list + pagination which shows NFT cards with mocked data and enables their pagination over several pages
 
+- AJ/CZ Memory game for word practicing
 ## Contact
 Martin Novák - martin.novak@argo22.com
 
