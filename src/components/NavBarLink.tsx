@@ -12,6 +12,11 @@ const activeClass = "item-active";
 export function NavBarLink({ to, children }: NavBarLink) {
   const currentPage = useLocation();
 
+  if(to==="/menu"){
+      return(
+              <a href={to}>{children}</a>
+      )
+  }
   return (
     <li className={"navbar__item"}>
       <NavLink

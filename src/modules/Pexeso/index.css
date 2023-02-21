@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Marhey&display=swap");
+
+.mb {
+  height: 95vh;
+  font-family: "Marhey", sans-serif;
+  color: #231942;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c8b8db;
+}
+
+#confetti-canvas {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+h1 {
+  font-size: 64px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.App {
+  min-width: 850px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+
+  background-color: #9f86c0;
+}
+
+.themeLink {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.levelBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+
+.levelButton {
+  width: 100px;
+  height: 45px;
+  border: solid 1px black;
+  background-color: #c8b8db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mainFrame {
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttonHolder {
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.gameBoard {
+  width: 800px;
+  height: 800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.button {
+  border: solid 1px black;
+  background-color: #c8b8db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nextLevelButton {
+  height: 35px;
+}
+
+.card {
+  position: relative;
+  font-size: 22px;
+}
+
+.holder {
+  width: 100%;
+  height: 100%;
+}
+
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: black solid 1px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
+  background-color: #9f86c0;
+  background-image: linear-gradient(135deg, #9f86c0 0%, #c8b8db 100%);
+}
+
+.back {
+  background: linear-gradient(
+    90deg,
+    rgba(159, 134, 192, 1) 35%,
+    rgba(97, 81, 117, 1) 100%
+  );
+}
+
+.unmount {
+  animation: show 0.3s linear;
+}
+
+.hide {
+  animation: hide 0.3s linear;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+
+/*Flip animation start*/
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.4s;
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0s;
+}
+
+.card .back {
+  transition: all ease-in 0.4s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+/*Flip Animation End*/
+
+.startBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noLink {
+  text-decoration: none;
+  color: #231942;
+}
+
+.backLink {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 10px;
+}
+
+.endDiv {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.endParagraph {
+  max-width: 600px;
+  font-size: 20px;
+}
+
+.checkMark {
+  position: fixed;
+  margin-left: 15px;
+}
+
+.resetButton {
+  width: 350px;
+  height: 50px;
+  margin-top: auto;
+  font-size: 18px;
+}
+
+.czFlag {
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  left: -12%;
+  rotate: -35deg;
+}
+
+.usFlag {
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  right: -12%;
+  rotate: 35deg;
+}
+
+@media only screen and (max-width: 1200px) {
+  .czFlag {
+    display: none;
+  }
+  .usFlag {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 1200px) {
+  .gameBoard {
+    width: 650px;
+    height: 650px;
+  }
+}

@@ -8,6 +8,7 @@ function NavBar() {
         <NavBarLink to={ERoutes.HOME}>Home</NavBarLink>
         <NavBarLink to={ERoutes.TIP_APP}>Tip App</NavBarLink>
         <NavBarLink to={ERoutes.NFT_CARDS}>NTF cards</NavBarLink>
+        <NavBarLink to={ERoutes.PEXESO}>Pexeso</NavBarLink>
       </ul>
     </nav>
   );
