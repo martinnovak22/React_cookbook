@@ -30,7 +30,7 @@ export default function HomeMenu({ levels, handleLevels }) {
 
   return (
     <div className="App">
-      <h1 className={"animate__animated animate__bounceIn"}>
+      <h1 className={"animate__animated animate__bounceIn heading"}>
         Dvojjazyčné pexeso
       </h1>
       <img
@@ -87,6 +87,7 @@ export default function HomeMenu({ levels, handleLevels }) {
           Vynulovat celou hru
         </button>
       </div>
+      <a href={"/"}>Na hlavní menu</a>
     </div>
   );
 }

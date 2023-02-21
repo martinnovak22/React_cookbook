@@ -14,7 +14,10 @@ export function NavBarLink({ to, children }: NavBarLink) {
 
   if(to==="/menu"){
       return(
-              <a href={to}>{children}</a>
+          <li className={"navbar__item"}>
+              <a href={to} className={"navbar__item-text"}>{children}</a>
+          </li>
+
       )
   }
   return (
