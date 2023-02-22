@@ -29,65 +29,71 @@ export default function HomeMenu({ levels, handleLevels }) {
   };
 
   return (
-    <div className="App">
-      <h1 className={"animate__animated animate__bounceIn heading"}>
-        Dvojjazyčné pexeso
-      </h1>
-      <img
-        src={czFlag}
-        alt={"vlajka česka"}
-        className={"czFlag animate__animated animate__zoomInLeft animate__slow"}
-      />
-      <img
-        src={usFlag}
-        alt={"vlajka USA"}
-        className={
-          "usFlag animate__animated animate__zoomInRight animate__slow"
-        }
-      />
-      <div className={"startBox"}>
-        <h2> Zvolte si jedno z témat </h2>
-        <div>
-          <Link to="/menu/technika" className={"noLink "}>
-            <p
-              className={
-                "themeLink animate__animated animate__bounce animate__delay-2s"
-              }
-            >
-              Technika {isDone("technika")}
-            </p>
-          </Link>
+    <>
+      <div className="App">
+        <h1 className={"animate__animated animate__bounceIn heading"}>
+          Dvojjazyčné pexeso
+        </h1>
+        <img
+          src={czFlag}
+          alt={"vlajka česka"}
+          className={
+            "czFlag animate__animated animate__zoomInLeft animate__slow"
+          }
+        />
+        <img
+          src={usFlag}
+          alt={"vlajka USA"}
+          className={
+            "usFlag animate__animated animate__zoomInRight animate__slow"
+          }
+        />
+        <div className={"startBox"}>
+          <h2> Zvolte si jedno z témat </h2>
+          <div className={"linkMargin"}>
+            <Link to="/menu/technika" className={"noLink "}>
+              <p
+                className={
+                  "themeLink animate__animated animate__bounce animate__delay-2s"
+                }
+              >
+                Technika {isDone("technika")}
+              </p>
+            </Link>
+          </div>
+          <div className={"linkMargin"}>
+            <Link to="/menu/priroda" className={"noLink"}>
+              <p
+                className={
+                  "themeLink animate__animated animate__bounce animate__delay-3s"
+                }
+              >
+                Příroda {isDone("priroda")}
+              </p>
+            </Link>
+          </div>
+          <div className={"linkMargin"}>
+            <Link to="/menu/rodina" className={"noLink"}>
+              <p
+                className={
+                  "themeLink animate__animated animate__bounce animate__delay-4s"
+                }
+              >
+                Rodina {isDone("rodina")}
+              </p>
+            </Link>
+          </div>
+          <button
+            onClick={(e) => handleGameReset(e)}
+            className={"resetButton button"}
+          >
+            Vynulovat celou hru
+          </button>
         </div>
-        <div>
-          <Link to="/menu/priroda" className={"noLink"}>
-            <p
-              className={
-                "themeLink animate__animated animate__bounce animate__delay-3s"
-              }
-            >
-              Příroda {isDone("priroda")}
-            </p>
-          </Link>
-        </div>
-        <div>
-          <Link to="/menu/rodina" className={"noLink"}>
-            <p
-              className={
-                "themeLink animate__animated animate__bounce animate__delay-4s"
-              }
-            >
-              Rodina {isDone("rodina")}
-            </p>
-          </Link>
-        </div>
-        <button
-          onClick={(e) => handleGameReset(e)}
-          className={"resetButton button"}
-        >
-          Vynulovat celou hru
-        </button>
+        <a href={"/"} className={"backButton"}>
+          🔙 Na hlavní menu
+        </a>
       </div>
-      <a href={"/"}>Na hlavní menu</a>
-    </div>
+    </>
   );
 }

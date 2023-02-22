@@ -22,7 +22,7 @@ h1 {
   margin: 0;
 }
 
-.heading{
+.heading {
   margin-bottom: 20px;
 }
 
@@ -43,6 +43,17 @@ h2 {
   box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
 
   background-color: #9f86c0;
+}
+
+.backButton {
+  margin-top: 25px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.linkMargin {
+  margin-top: 25px;
 }
 
 .themeLink {
@@ -220,7 +231,7 @@ h2 {
 .resetButton {
   width: 350px;
   height: 50px;
-  margin-top: auto;
+  margin-top: 20px;
   font-size: 18px;
 }
 
